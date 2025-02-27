@@ -16,4 +16,29 @@ console.log(
   "color: #d81b60; font-size: 16px; font-weight: bold;"
 );
 
-console.log("알맞은 스크립트를 작성하세요");
+const commentList = document.querySelector('.comment-list');
+const commentForm = document.querySelector('#comment-form');
+const commentInput = document.querySelector('#comment-input');
+
+commentForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const comment = commentInput.value;
+  if (comment) {
+    const commentElement = document.createElement('li');
+    const commentItem = `
+            <div class='comment-item'>
+              <div class='comment-author'>
+                <img src='./images/comment-author-icon.png' alt='사용자 프로필 이미지' />
+                <span>방문자</span>
+              </div>
+              <div class='comment-content'>
+                ${comment}
+              </div>
+            </div>`;
+
+    commentElement.innerHTML = commentItem;
+    commentList.appendChild(commentElement);
+    commentInput.value = '';
+  }
+});
