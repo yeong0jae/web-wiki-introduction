@@ -57,6 +57,16 @@ h4 {
   margin-bottom: var(--page-subtitle-margin-y);
 }
 
+.profile-image {
+  background-image: url("../images/gallery1.jpeg");
+  background-size: 100%;
+  background-position: center 100%;
+  width: var(--aside-width);
+  height: var(--aside-width);
+
+  text-indent: -1000rem;
+}
+
 .gallery {
   display: grid !important;
   grid-template-columns: repeat(3, 270px);
